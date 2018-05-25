@@ -1,0 +1,11 @@
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\bin\Debug\Pharmacy_app.exe.config
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\bin\Debug\Pharmacy_app.exe
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\bin\Debug\Pharmacy_app.pdb
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.csprojResolveAssemblyReference.cache
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.Login.resources
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.Properties.Resources.resources
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.csproj.GenerateResource.cache
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.csproj.CoreCompileInputs.cache
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.exe
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.pdb
+C:\Users\stefke\Desktop\Development\Pharmacy_app\Pharmacy_app\obj\Debug\Pharmacy_app.Pharmacy_home.resources
