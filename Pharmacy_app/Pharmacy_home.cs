@@ -8,7 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using iTextSharp.text.html.simpleparser;
+using System.IO;
+using System.Reflection;
+using DGVPrinterHelper;
 namespace Pharmacy_app
 {
     public partial class Pharmacy_home : Form
@@ -52,6 +57,7 @@ namespace Pharmacy_app
 
         }
 
+
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
            
@@ -87,19 +93,45 @@ namespace Pharmacy_app
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Drug has been sold. You can see the status in the next tab!");
                 }
-                using (SqlCommand cmd = new SqlCommand(sql2, cnn))
+                using (SqlCommand cmd1 = new SqlCommand(sql2, cnn))
                 {
-                    cmd.ExecuteNonQuery();
+                    cmd1.ExecuteNonQuery();
                     MessageBox.Show("Quantity of drug reduced!");
-                }
 
+                }
+                // TODO: This line of code loads data into the 'pharmacyDBDataSet.sold_drugs' table. You can move, or remove it, as needed.
+                this.sold_drugsTableAdapter.Fill(this.pharmacyDBDataSet.sold_drugs);
+                // TODO: This line of code loads data into the 'pharmacyDBDataSet.inventory' table. You can move, or remove it, as needed.
+                this.inventoryTableAdapter.Fill(this.pharmacyDBDataSet.inventory);
             }
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            sold_drugsDataGridView.Update();
-            sold_drugsDataGridView.Refresh();
+            // TODO: This line of code loads data into the 'pharmacyDBDataSet.sold_drugs' table. You can move, or remove it, as needed.
+            this.sold_drugsTableAdapter.Fill(this.pharmacyDBDataSet.sold_drugs);
+            // TODO: This line of code loads data into the 'pharmacyDBDataSet.inventory' table. You can move, or remove it, as needed.
+            this.inventoryTableAdapter.Fill(this.pharmacyDBDataSet.inventory);
+        }
+        private void dataBind()
+        {
+
+        }
+
+        private void printPDF_Click(object sender, EventArgs e)
+        {
+            DGVPrinter printer = new DGVPrinter();
+            printer.Title = "Customer Report";
+            printer.SubTitle = "Drugs report";
+            printer.SubTitleFormatFlags = StringFormatFlags.LineLimit | StringFormatFlags.NoClip;
+            printer.PageNumbers = true;
+            printer.PageNumberInHeader = false;
+            printer.PorportionalColumns = true;
+            printer.HeaderCellAlignment = StringAlignment.Near;
+            printer.Footer = "Drug store";
+            printer.FooterSpacing = 15;
+            printer.PrintDataGridView(sold_drugsDataGridView);
+                
         }
     }
 }
